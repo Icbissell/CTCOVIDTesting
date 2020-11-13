@@ -8,7 +8,7 @@ import math
 def addressToLatLong():
     geolocator = Nominatim(user_agent='CTCounties')
     zips = []
-    df = pd.read_csv("/home/bissell/Desktop/CTCounties/COVID_Testing_Locations_CT_Sheet1.csv", na_values = ['no info', '.'])
+    df = pd.read_csv("/home/bissell/Documents/CTCOVIDTesting/COVID_Testing_Locations_CT_Sheet1.csv", na_values = ['no info', '.'])
     for i in range(420):
         location = geolocator.geocode(df["Street Address"][i] + " " + df["City"][i] + " " + df["State"][i] + " " + df["ZIP Code"][i])
         if location:
